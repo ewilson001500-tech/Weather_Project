@@ -71,7 +71,7 @@ main {
 .weather-icon {
   font-size: 50px;
   position: relative;
-  top: -12px;
+  top: 12px;
 }
 
 .weather-value {

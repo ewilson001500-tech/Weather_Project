@@ -1,4 +1,5 @@
 function refreshWeather(response) {
+  console.log(response.data);
   let tempElement = document.querySelector("#weather-value");
   let temp = Math.round(response.data.temperature.current);
   let city = document.querySelector(".current-city");
@@ -7,12 +8,14 @@ function refreshWeather(response) {
   let windElement = document.querySelector("#wind");
   let time = document.querySelector("#time");
   let date = new Date(response.data.time * 1000);
+  let iconElement = document.querySelector("#weather-icon");
 
   city.innerHTML = response.data.city;
   time.innerHTML = formatDate(date);
   descriptionElement.innerHTML = response.data.condition.description;
   humidityElement.innerHTML = `${response.data.temperature.humidity}%`;
   windElement.innerHTML = `${response.data.wind.speed} mph`;
+  iconElement.innerHTML = `<img src="${response.data.condition.icon_url}" class = "weather-icon" />`;
   tempElement.innerHTML = temp;
 }
 
@@ -29,6 +32,10 @@ function formatDate(date) {
     "Saturday",
   ];
   let day = days[date.getDay()];
+
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
 
   return `${day} ${hour}:${minutes}`;
 }
