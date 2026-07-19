@@ -85,6 +85,38 @@ main {
   top: -40px;
 }
 
+.weather-forecast {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 25px;
+}
+
+.forecast-day {
+  text-align: center;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  color: rgba(70, 95, 126, 0.658);
+}
+
+.forecast-icon {
+  display: block;
+  text-align: center;
+  font-size: 38px;
+}
+
+.forecast-temperatures {
+  display: flex;
+  justify-content: center;
+  font-size: 16px;
+  color: #7f3ee7e5;
+  padding-top: 15px;
+}
+
+.forecast-temp {
+  padding: 0 8px;
+}
+
 footer {
   font-size: 14px;
   color: rgba(0, 0, 0, 0.521);
